@@ -30,14 +30,13 @@
   </button>
 
   <div class="auth-wrapper">
-    <div class="auth-card">
+    <div class="auth-card auth-card--wide">
 
       <!-- Logo -->
-      <div class="auth-logo">
-        <img src="../assets/images/logo.png" alt="DealHunt"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-        <span class="auth-wordmark" style="display:none;">DealHunt</span>
-      </div>
+      <a href="dashboard.html" class="auth-logo" aria-label="DealHunt home">
+        <img src="../assets/images/light_mode.png" alt="DealHunt" class="logo-mode-light" />
+        <img src="../assets/images/dark_mode.png"  alt="DealHunt" class="logo-mode-dark"  />
+      </a>
 
       <h1 class="auth-title">Create Account</h1>
       <p class="auth-subtitle">Join thousands of smart shoppers</p>
@@ -58,23 +57,25 @@
           <span class="input-error" id="error-signup-email"></span>
         </div>
 
-        <div class="input-group">
-          <label for="signup-phone" class="input-label">
-            Phone Number <span class="label-badge">Optional</span>
-          </label>
-          <div class="input-wrapper">
-            <span class="input-prefix">+</span>
-            <input type="tel" id="signup-phone" name="phone"
-              class="input-field input-field--prefixed"
-              placeholder="91 98765 43210" autocomplete="tel" />
+        <div class="field-row">
+          <div class="input-group">
+            <label for="signup-phone" class="input-label">
+              Phone <span class="label-badge">Optional</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-prefix">+</span>
+              <input type="tel" id="signup-phone" name="phone"
+                class="input-field input-field--prefixed"
+                placeholder="91 98765 43210" autocomplete="tel" />
+            </div>
           </div>
-        </div>
 
-        <div class="input-group">
-          <label for="signup-dob" class="input-label">Date of Birth</label>
-          <input type="date" id="signup-dob" name="dob"
-            class="input-field input-field--date" required />
-          <span class="input-error" id="error-signup-dob"></span>
+          <div class="input-group">
+            <label for="signup-dob" class="input-label">Date of Birth</label>
+            <input type="date" id="signup-dob" name="dob"
+              class="input-field input-field--date" required />
+            <span class="input-error" id="error-signup-dob"></span>
+          </div>
         </div>
 
         <div class="input-group">
@@ -123,13 +124,14 @@
           <span class="input-error" id="error-confirm-password"></span>
         </div>
 
-        <div class="input-group">
+        <div class="input-group terms-group">
           <label class="checkbox-label" for="agree-terms">
             <input type="checkbox" id="agree-terms" name="terms" required />
             <span class="checkbox-custom"></span>
-            I agree to the
-            <a href="#" class="link-accent">Terms of Service</a>
-            and <a href="#" class="link-accent">Privacy Policy</a>
+            <span>
+              I agree to the <a href="#" class="link-accent">Terms&nbsp;of&nbsp;Service</a>
+              and the <a href="#" class="link-accent">Privacy&nbsp;Policy</a>.
+            </span>
           </label>
           <span class="input-error" id="error-terms"></span>
         </div>

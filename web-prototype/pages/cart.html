@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="DealHunt Dashboard – Find, filter and hunt the best deals." />
-  <title>Dashboard – DealHunt</title>
+  <title>Cart – DealHunt</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -95,13 +95,13 @@
           <p class="sidebar-section-label">Navigation</p>
           <ul class="nav-list">
             <li>
-              <a href="dashboard.html" class="nav-item active" id="nav-dashboard">
+              <a href="dashboard.html" class="nav-item" id="nav-dashboard">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
                 <span>Dashboard</span>
               </a>
             </li>
             <li>
-              <a href="cart.html" class="nav-item" id="nav-cart">
+              <a href="cart.html" class="nav-item active" id="nav-cart">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
                 <span>Cart</span>
               </a>
@@ -224,43 +224,10 @@
     <div class="sidebar-hover-zone" id="sidebar-hover-zone"></div>
 
     <!-- ── MAIN CONTENT ── -->
-    <main class="main-content" id="main-content">
-
-      <div class="main-header">
-        <div>
-          <h1 class="main-title">Today's Deals</h1>
-          <p class="results-count" id="results-count">Showing 9 deals</p>
-        </div>
-        <div class="sort-wrap">
-          <label for="sort-select" class="sort-label">Sort by</label>
-          <select id="sort-select" class="sort-select">
-            <option value="best">Best Match</option>
-            <option value="score">Deal Score ↑</option>
-            <option value="discount">Highest Discount</option>
-            <option value="price-asc">Price: Low → High</option>
-            <option value="price-desc">Price: High → Low</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Active filter tags -->
-      <div class="active-filters" id="active-filters" style="display:none;">
-        <span class="af-label">Active:</span>
-        <div class="af-tags" id="af-tags"></div>
-        <button class="af-clear" id="af-clear-all">Clear all</button>
-      </div>
-
-      <!-- Deals grid -->
-      <div class="deals-grid" id="deals-grid"></div>
-
-      <!-- Empty state -->
-      <div class="empty-state" id="empty-state" style="display:none;">
-        <div class="empty-icon">🔍</div>
-        <h2>No deals found</h2>
-        <p>Try adjusting your filters or search term.</p>
-        <button class="btn-reset" id="btn-empty-reset">Reset Filters</button>
-      </div>
-
+    <main class="main-content" id="main-content" style="display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 60px);">
+      <h2 style="opacity: 0.2; font-size: 2.5rem; text-align: center; max-width: 600px; padding: 2rem; line-height: 1.4; color: var(--text-primary);">
+        Shubham ji has yet to decide what to put here
+      </h2>
     </main>
 
   </div>

@@ -194,67 +194,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ─────────────────────────────────────────
-  // 6. FORM SUBMIT — LOGIN
+  // 6. FORM SUBMIT — LOGIN (dummy-link to dashboard)
   // ─────────────────────────────────────────
   const loginForm = document.getElementById('login-form');
   if (loginForm) {
     loginForm.addEventListener('submit', e => {
       e.preventDefault();
-      const email    = loginEmailInput ? loginEmailInput.value.trim() : '';
-      const password = loginPasswordInput ? loginPasswordInput.value : '';
-      let valid = true;
-
-      if (!email || !isValidEmail(email)) {
-        showError(loginEmailInput, 'error-login-email', 'Enter a valid email address.'); valid = false;
-      }
-      if (!password) {
-        showError(loginPasswordInput, 'error-login-password', 'Password is required.'); valid = false;
-      }
-      if (!valid) return;
-
       setLoading('btn-login', true);
-      // TODO: replace with actual API call
-      setTimeout(() => {
-        setLoading('btn-login', false);
-        console.log('Login submitted:', { email });
-      }, 1500);
+      setTimeout(() => { window.location.href = 'dashboard.html'; }, 600);
     });
   }
 
   // ─────────────────────────────────────────
-  // 7. FORM SUBMIT — SIGNUP
+  // 7. FORM SUBMIT — SIGNUP (dummy-link to dashboard)
   // ─────────────────────────────────────────
   const signupForm = document.getElementById('signup-form');
   if (signupForm) {
     signupForm.addEventListener('submit', e => {
       e.preventDefault();
-      let valid = true;
-
-      const name    = signupName    ? signupName.value.trim()   : '';
-      const email   = signupEmail   ? signupEmail.value.trim()  : '';
-      const dob     = signupDob     ? signupDob.value           : '';
-      const pass    = signupPass    ? signupPass.value          : '';
-      const confirm = signupConfirm ? signupConfirm.value       : '';
-
-      if (!name) { showError(signupName, 'error-signup-name', 'Full name is required.'); valid = false; }
-      if (!email || !isValidEmail(email)) { showError(signupEmail, 'error-signup-email', 'Enter a valid email address.'); valid = false; }
-      if (!dob)  { showError(signupDob, 'error-signup-dob', 'Date of birth is required.'); valid = false; }
-      if (!pass || pass.length < 8) { showError(signupPass, 'error-signup-password', 'Must be at least 8 characters.'); valid = false; }
-      if (pass !== confirm) { showError(signupConfirm, 'error-confirm-password', 'Passwords do not match.'); valid = false; }
-      if (agreeTerms && !agreeTerms.checked) {
-        const el = document.getElementById('error-terms');
-        if (el) el.textContent = 'You must accept the terms to continue.';
-        valid = false;
-      }
-
-      if (!valid) return;
-
       setLoading('btn-signup', true);
-      // TODO: replace with actual API call
-      setTimeout(() => {
-        setLoading('btn-signup', false);
-        console.log('Signup submitted:', { name, email, dob });
-      }, 1500);
+      setTimeout(() => { window.location.href = 'dashboard.html'; }, 600);
     });
   }
 
@@ -272,15 +231,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ─────────────────────────────────────────
-  // 9. SSO STUBS
+  // 9. SSO STUBS — dummy-link to dashboard
   // ─────────────────────────────────────────
-  ['btn-google-login', 'btn-google-signup'].forEach(id => {
+  ['btn-google-login', 'btn-google-signup', 'btn-apple-login', 'btn-apple-signup'].forEach(id => {
     const el = document.getElementById(id);
-    if (el) el.addEventListener('click', () => console.log('Google SSO — connect to backend'));
-  });
-  ['btn-apple-login', 'btn-apple-signup'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener('click', () => console.log('Apple SSO — connect to backend'));
+    if (el) el.addEventListener('click', () => { window.location.href = 'dashboard.html'; });
   });
 
 });

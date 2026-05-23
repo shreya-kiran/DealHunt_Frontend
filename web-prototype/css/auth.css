@@ -53,34 +53,58 @@ body {
   justify-content: center;
 }
 
-/* ── Card — transparent, blends with page ── */
+/* ── Card — glass surface, sits above ambient glow ── */
 .auth-card {
-  background: transparent;
-  padding: 2.4rem 2rem;
+  background: var(--white-accent-soft);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--sidebar-border);
+  box-shadow: var(--shadow-glass);
+  padding: 2.5rem 2.25rem;
+  border-radius: var(--radius);
   width: 100%;
-  max-width: 420px;
+  max-width: 460px;
+  position: relative;
+  z-index: 1;
 }
 
-/* ── Logo — NO border/overflow, just the image ── */
+/* Ambient glow behind the auth card */
+body::before {
+  content: '';
+  position: fixed;
+  top: 50%; left: 50%;
+  width: 600px; height: 600px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--white-accent-strong) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+[data-theme="dark"] body::before { opacity: 0.05; }
+
+/* ── Logo — rounded tile around the new icon ── */
 .auth-logo {
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+  text-decoration: none;
 }
 
 .auth-logo img {
-  max-height: 140px;
-  width: auto;
+  width: 84px;
+  height: 84px;
   object-fit: contain;
-  border-radius: 0;           /* NO border radius on outer corner */
-  border: none;               /* NO border */
-  box-shadow: none;           /* NO shadow framing the image */
-  mix-blend-mode: multiply;   /* Works on light bg */
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  padding: 8px;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--t), box-shadow var(--t);
 }
-
-[data-theme="dark"] .auth-logo img {
-  mix-blend-mode: lighten;
-  filter: brightness(1.2);
+.auth-logo:hover img {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: var(--shadow-hover);
 }
 
 /* Wordmark fallback */
@@ -88,10 +112,7 @@ body {
   font-size: 2rem;
   font-weight: 800;
   letter-spacing: -1px;
-  background: linear-gradient(135deg, var(--accent), #a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
   text-align: center;
 }
 
@@ -233,9 +254,9 @@ body {
   display: flex; align-items: center; justify-content: space-between;
 }
 .checkbox-label {
-  display: flex; align-items: center; gap: 0.5rem;
+  display: flex; align-items: flex-start; gap: 0.75rem;
   cursor: pointer; font-size: 0.85rem; color: var(--text-secondary);
-  user-select: none;
+  user-select: none; line-height: 1.5;
 }
 .checkbox-label input[type="checkbox"] { display: none; }
 .checkbox-custom {
@@ -245,6 +266,7 @@ body {
   background: var(--bg-input);
   display: inline-flex; align-items: center; justify-content: center;
   transition: background var(--t), border-color var(--t);
+  margin-top: 0.15rem;
 }
 .checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
   background: var(--accent); border-color: var(--accent);
@@ -333,7 +355,41 @@ body {
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes spin   { to { transform: rotate(360deg); } }
 
+/* ── Terms checkbox layout — readable on laptop ── */
+.terms-group {
+  margin-top: 0.4rem;
+  padding: 0.75rem 0.9rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.terms-group .checkbox-label {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  align-items: flex-start;
+}
+.terms-group .checkbox-label > .checkbox-custom {
+  margin-top: 0.1rem;
+}
+.terms-group .link-accent { white-space: nowrap; }
+
+/* Signup wider card — uses laptop real-estate well */
+.auth-card--wide { max-width: 560px; }
+.auth-card--wide .auth-form { gap: 1.1rem; }
+
+/* Two-column field layout for signup on laptop */
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
 /* ── Responsive ── */
+@media (max-width: 640px) {
+  .field-row { grid-template-columns: 1fr; gap: 1rem; }
+  .auth-card--wide { max-width: 460px; }
+}
 @media (max-width: 480px) {
   .auth-card { padding: 1.8rem 1.2rem; }
   .auth-title { font-size: 1.3rem; }

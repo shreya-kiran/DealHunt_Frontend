@@ -1,0 +1,33 @@
+# =============================================
+# DealHunt – .gitignore
+# =============================================
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Flutter
+flutter-app/.dart_tool/
+flutter-app/.flutter-plugins
+flutter-app/.flutter-plugins-dependencies
+flutter-app/build/
+flutter-app/pubspec.lock
+flutter-app/.packages
+
+# Node / Web tooling
+node_modules/
+dist/
+.cache/
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log

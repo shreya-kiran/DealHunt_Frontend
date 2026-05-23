@@ -1,26 +1,33 @@
 /* =============================================
    DealHunt – Global Theme System
-   Light + Dark CSS custom properties
+   White Accent System · Light + Dark
    ============================================= */
 
 /* ── Light Mode (default) ── */
 :root, [data-theme="light"] {
-  --bg:            #F0F2FF;
+  --bg:            #F4F4F7;
   --bg-card:       #FFFFFF;
-  --bg-secondary:  #F5F7FF;
-  --bg-input:      #F0F2FF;
+  --bg-secondary:  #FFFFFF;
+  --bg-input:      #F7F7F8;
 
-  --text-primary:  #111827;
+  --text-primary:  #0F0F12;
   --text-secondary:#4B5563;
   --text-muted:    #9CA3AF;
 
-  --accent:        #6366F1;
-  --accent-dark:   #4F46E5;
-  --accent-light:  rgba(99,102,241,0.10);
+  /* Primary action colour stays dark for readability on white */
+  --accent:        #0F0F12;
+  --accent-dark:   #000000;
+  --accent-light:  rgba(15,15,18,0.06);
   --accent-fg:     #FFFFFF;
 
+  /* White-accent tokens (used for highlights, glass tints, surfaces) */
+  --white-accent:        #FFFFFF;
+  --white-accent-soft:   rgba(255,255,255,0.65);
+  --white-accent-strong: rgba(255,255,255,0.9);
+  --white-tint:          rgba(255,255,255,0.6);
+
   --border:        #E5E7EB;
-  --border-focus:  #6366F1;
+  --border-focus:  #0F0F12;
 
   --success:       #10B981;
   --success-light: rgba(16,185,129,0.12);
@@ -29,11 +36,15 @@
   --danger:        #EF4444;
   --danger-light:  rgba(239,68,68,0.12);
 
-  --shadow-card:   0 4px 24px rgba(99,102,241,0.08), 0 1px 4px rgba(0,0,0,0.04);
-  --shadow-hover:  0 8px 40px rgba(99,102,241,0.18), 0 2px 8px rgba(0,0,0,0.06);
+  /* Neutral shadows — no blue tint */
+  --shadow-card:   0 4px 24px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-hover:  0 8px 40px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-glass:  0 8px 32px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.6);
 
-  --navbar-bg:     rgba(255,255,255,0.88);
-  --sidebar-bg:    #FFFFFF;
+  /* Glass surfaces */
+  --navbar-bg:     rgba(255,255,255,0.78);
+  --sidebar-bg:    rgba(255,255,255,0.45);
+  --sidebar-border: rgba(255,255,255,0.7);
 
   --radius:        16px;
   --radius-sm:     10px;
@@ -42,24 +53,34 @@
   --t:             0.2s ease;
 }
 
+/* ── Logo Switching (legacy classes) ── */
+.logo-dark { display: none; }
+.logo-light { display: block; }
+
+
 /* ── Dark Mode ── */
 [data-theme="dark"] {
-  --bg:            #0D0D1A;
-  --bg-card:       #16162A;
-  --bg-secondary:  #1E1E35;
-  --bg-input:      #1A1A30;
+  --bg:            #0B0B0F;
+  --bg-card:       #15151B;
+  --bg-secondary:  #1B1B22;
+  --bg-input:      #15151B;
 
-  --text-primary:  #F1F5F9;
-  --text-secondary:#94A3B8;
-  --text-muted:    #64748B;
+  --text-primary:  #F4F5F7;
+  --text-secondary:#B5B7BD;
+  --text-muted:    #7B7E86;
 
-  --accent:        #818CF8;
-  --accent-dark:   #6366F1;
-  --accent-light:  rgba(129,140,248,0.15);
-  --accent-fg:     #FFFFFF;
+  --accent:        #FFFFFF;
+  --accent-dark:   #FFFFFF;
+  --accent-light:  rgba(255,255,255,0.10);
+  --accent-fg:     #0B0B0F;
 
-  --border:        #2D2D4E;
-  --border-focus:  #818CF8;
+  --white-accent:        #FFFFFF;
+  --white-accent-soft:   rgba(255,255,255,0.10);
+  --white-accent-strong: rgba(255,255,255,0.18);
+  --white-tint:          rgba(255,255,255,0.06);
+
+  --border:        #25252E;
+  --border-focus:  #FFFFFF;
 
   --success:       #34D399;
   --success-light: rgba(52,211,153,0.12);
@@ -70,7 +91,18 @@
 
   --shadow-card:   0 4px 24px rgba(0,0,0,0.40);
   --shadow-hover:  0 8px 40px rgba(0,0,0,0.60);
+  --shadow-glass:  0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04);
 
-  --navbar-bg:     rgba(13,13,26,0.92);
-  --sidebar-bg:    #16162A;
+  --navbar-bg:     rgba(11,11,15,0.78);
+  --sidebar-bg:    rgba(21,21,27,0.45);
+  --sidebar-border: rgba(255,255,255,0.06);
 }
+
+[data-theme="dark"] .logo-light { display: none; }
+[data-theme="dark"] .logo-dark { display: block; }
+
+/* ── New Mode Logo Switching (light_mode.png / dark_mode.png) ── */
+.logo-mode-dark { display: none; }
+.logo-mode-light { display: block; }
+[data-theme="dark"] .logo-mode-light { display: none; }
+[data-theme="dark"] .logo-mode-dark  { display: block; }
