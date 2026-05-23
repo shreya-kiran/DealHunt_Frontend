@@ -1,0 +1,76 @@
+/* =============================================
+   DealHunt – Global Theme System
+   Light + Dark CSS custom properties
+   ============================================= */
+
+/* ── Light Mode (default) ── */
+:root, [data-theme="light"] {
+  --bg:            #F0F2FF;
+  --bg-card:       #FFFFFF;
+  --bg-secondary:  #F5F7FF;
+  --bg-input:      #F0F2FF;
+
+  --text-primary:  #111827;
+  --text-secondary:#4B5563;
+  --text-muted:    #9CA3AF;
+
+  --accent:        #6366F1;
+  --accent-dark:   #4F46E5;
+  --accent-light:  rgba(99,102,241,0.10);
+  --accent-fg:     #FFFFFF;
+
+  --border:        #E5E7EB;
+  --border-focus:  #6366F1;
+
+  --success:       #10B981;
+  --success-light: rgba(16,185,129,0.12);
+  --warning:       #F59E0B;
+  --warning-light: rgba(245,158,11,0.12);
+  --danger:        #EF4444;
+  --danger-light:  rgba(239,68,68,0.12);
+
+  --shadow-card:   0 4px 24px rgba(99,102,241,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-hover:  0 8px 40px rgba(99,102,241,0.18), 0 2px 8px rgba(0,0,0,0.06);
+
+  --navbar-bg:     rgba(255,255,255,0.88);
+  --sidebar-bg:    #FFFFFF;
+
+  --radius:        16px;
+  --radius-sm:     10px;
+  --radius-xs:     6px;
+  --font:          'Inter', system-ui, sans-serif;
+  --t:             0.2s ease;
+}
+
+/* ── Dark Mode ── */
+[data-theme="dark"] {
+  --bg:            #0D0D1A;
+  --bg-card:       #16162A;
+  --bg-secondary:  #1E1E35;
+  --bg-input:      #1A1A30;
+
+  --text-primary:  #F1F5F9;
+  --text-secondary:#94A3B8;
+  --text-muted:    #64748B;
+
+  --accent:        #818CF8;
+  --accent-dark:   #6366F1;
+  --accent-light:  rgba(129,140,248,0.15);
+  --accent-fg:     #FFFFFF;
+
+  --border:        #2D2D4E;
+  --border-focus:  #818CF8;
+
+  --success:       #34D399;
+  --success-light: rgba(52,211,153,0.12);
+  --warning:       #FBBF24;
+  --warning-light: rgba(251,191,36,0.12);
+  --danger:        #F87171;
+  --danger-light:  rgba(248,113,113,0.12);
+
+  --shadow-card:   0 4px 24px rgba(0,0,0,0.40);
+  --shadow-hover:  0 8px 40px rgba(0,0,0,0.60);
+
+  --navbar-bg:     rgba(13,13,26,0.92);
+  --sidebar-bg:    #16162A;
+}

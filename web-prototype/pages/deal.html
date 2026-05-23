@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Deal details, price comparison, and AI recommendation – DealHunt" />
+  <title>Deal Details – DealHunt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/deal.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="deal-navbar">
+    <a href="dashboard.html" class="back-btn" id="back-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to Deals
+    </a>
+    <span class="deal-nav-wordmark">DealHunt</span>
+    <button class="theme-toggle-sm" data-theme-toggle aria-label="Toggle theme" onclick="DealHuntTheme.toggle()">
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </header>
+
+  <!-- Main -->
+  <main class="deal-main" id="deal-main">
+
+    <!-- Hero Section -->
+    <section class="deal-hero" id="deal-hero">
+      <div class="hero-image-wrap" id="hero-image">
+        <!-- filled by JS -->
+      </div>
+      <div class="hero-info">
+        <div class="hero-badges">
+          <span class="hero-platform-badge" id="hero-platform"></span>
+          <span class="hero-category-badge" id="hero-category"></span>
+        </div>
+        <h1 class="hero-title" id="hero-title"></h1>
+        <div class="hero-prices" id="hero-prices"></div>
+        <div class="hero-rating" id="hero-rating"></div>
+        <div class="hero-specs" id="hero-specs"></div>
+        <a class="buy-now-btn" id="buy-now-btn" href="#" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          Buy Now — Best Price
+        </a>
+      </div>
+    </section>
+
+    <!-- Deal Score -->
+    <section class="deal-section">
+      <h2 class="section-title">Deal Score</h2>
+      <div class="score-container">
+        <div class="score-gauge-wrap">
+          <div class="score-gauge" id="score-gauge">
+            <svg class="gauge-svg" viewBox="0 0 120 120">
+              <circle class="gauge-track" cx="60" cy="60" r="50" fill="none" stroke-width="10"/>
+              <circle class="gauge-fill" id="gauge-fill" cx="60" cy="60" r="50" fill="none" stroke-width="10"
+                stroke-dasharray="314" stroke-dashoffset="314" stroke-linecap="round"
+                transform="rotate(-90 60 60)"/>
+            </svg>
+            <div class="gauge-center">
+              <span class="gauge-number" id="gauge-number">0</span>
+              <span class="gauge-label-sm">/ 100</span>
+            </div>
+          </div>
+          <div class="gauge-verdict" id="gauge-verdict"></div>
+        </div>
+        <div class="score-breakdown">
+          <div class="score-bar-row">
+            <span class="sbar-label">Price vs History</span>
+            <div class="sbar-track"><div class="sbar-fill" id="sb-history" style="width:0%"></div></div>
+            <span class="sbar-pct" id="sb-history-pct">–</span>
+          </div>
+          <div class="score-bar-row">
+            <span class="sbar-label">Market Position</span>
+            <div class="sbar-track"><div class="sbar-fill" id="sb-market" style="width:0%"></div></div>
+            <span class="sbar-pct" id="sb-market-pct">–</span>
+          </div>
+          <div class="score-bar-row">
+            <span class="sbar-label">User Rating</span>
+            <div class="sbar-track"><div class="sbar-fill" id="sb-rating" style="width:0%"></div></div>
+            <span class="sbar-pct" id="sb-rating-pct">–</span>
+          </div>
+          <div class="score-bar-row">
+            <span class="sbar-label">Discount Depth</span>
+            <div class="sbar-track"><div class="sbar-fill" id="sb-discount" style="width:0%"></div></div>
+            <span class="sbar-pct" id="sb-discount-pct">–</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Price Comparison -->
+    <section class="deal-section">
+      <h2 class="section-title">Price Across Platforms</h2>
+      <div class="platform-compare" id="platform-compare"></div>
+    </section>
+
+    <!-- Price History -->
+    <section class="deal-section">
+      <h2 class="section-title">Price History <span class="section-sub">(last 6 months)</span></h2>
+      <div class="price-chart-wrap">
+        <div class="price-chart" id="price-chart"></div>
+        <div class="price-chart-labels" id="price-chart-labels"></div>
+      </div>
+    </section>
+
+    <!-- Product Description -->
+    <section class="deal-section">
+      <h2 class="section-title">Product Details</h2>
+      <p class="product-desc" id="product-desc"></p>
+    </section>
+
+    <!-- AI Summary -->
+    <section class="deal-section">
+      <h2 class="section-title">🤖 AI Recommendation</h2>
+      <div class="ai-card" id="ai-card">
+        <div class="ai-header">
+          <span class="ai-icon">🤖</span>
+          <span class="ai-title">DealHunt AI Analysis</span>
+        </div>
+        <p class="ai-text" id="ai-text"></p>
+      </div>
+    </section>
+
+    <!-- Buy Now (sticky bottom) -->
+    <div class="deal-sticky-cta">
+      <div class="sticky-price" id="sticky-price"></div>
+      <a class="buy-now-btn sticky-buy" id="sticky-buy-btn" href="#" target="_blank" rel="noopener noreferrer">
+        Buy Now →
+      </a>
+    </div>
+
+  </main>
+
+  <script src="../js/theme.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/deal.js"></script>
+</body>
+</html>
