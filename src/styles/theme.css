@@ -1,0 +1,98 @@
+/* =============================================
+   DealHunt – Global Theme System
+   White Accent System · Light + Dark
+   ============================================= */
+
+/* ── Light Mode (default) ── */
+:root, [data-theme="light"] {
+  --bg:            #F4F4F7;
+  --bg-card:       #FFFFFF;
+  --bg-secondary:  #FFFFFF;
+  --bg-input:      #F7F7F8;
+
+  --text-primary:  #0F0F12;
+  --text-secondary:#4B5563;
+  --text-muted:    #9CA3AF;
+
+  --accent:        #0F0F12;
+  --accent-dark:   #000000;
+  --accent-light:  rgba(15,15,18,0.06);
+  --accent-fg:     #FFFFFF;
+
+  --white-accent:        #FFFFFF;
+  --white-accent-soft:   rgba(255,255,255,0.65);
+  --white-accent-strong: rgba(255,255,255,0.9);
+  --white-tint:          rgba(255,255,255,0.6);
+
+  --border:        #E5E7EB;
+  --border-focus:  #0F0F12;
+
+  --success:       #10B981;
+  --success-light: rgba(16,185,129,0.12);
+  --warning:       #F59E0B;
+  --warning-light: rgba(245,158,11,0.12);
+  --danger:        #EF4444;
+  --danger-light:  rgba(239,68,68,0.12);
+
+  --shadow-card:   0 4px 24px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-hover:  0 8px 40px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-glass:  0 8px 32px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+
+  --navbar-bg:     rgba(255,255,255,0.78);
+  --sidebar-bg:    rgba(255,255,255,0.45);
+  --sidebar-border: rgba(255,255,255,0.7);
+
+  --radius:        16px;
+  --radius-sm:     10px;
+  --radius-xs:     6px;
+  --font:          'Inter', system-ui, sans-serif;
+  --t:             0.2s ease;
+}
+
+/* ── Logo Switching ── */
+:root .logo-mode-dark,
+[data-theme="light"] .logo-mode-dark { display: none !important; }
+:root .logo-mode-light,
+[data-theme="light"] .logo-mode-light { display: block !important; }
+[data-theme="dark"] .logo-mode-light { display: none !important; }
+[data-theme="dark"] .logo-mode-dark  { display: block !important; }
+
+/* ── Dark Mode ── */
+[data-theme="dark"] {
+  --bg:            #0B0B0F;
+  --bg-card:       #15151B;
+  --bg-secondary:  #1B1B22;
+  --bg-input:      #15151B;
+
+  --text-primary:  #F4F5F7;
+  --text-secondary:#B5B7BD;
+  --text-muted:    #7B7E86;
+
+  --accent:        #FFFFFF;
+  --accent-dark:   #FFFFFF;
+  --accent-light:  rgba(255,255,255,0.10);
+  --accent-fg:     #0B0B0F;
+
+  --white-accent:        #FFFFFF;
+  --white-accent-soft:   rgba(255,255,255,0.10);
+  --white-accent-strong: rgba(255,255,255,0.18);
+  --white-tint:          rgba(255,255,255,0.06);
+
+  --border:        #25252E;
+  --border-focus:  #FFFFFF;
+
+  --success:       #34D399;
+  --success-light: rgba(52,211,153,0.12);
+  --warning:       #FBBF24;
+  --warning-light: rgba(251,191,36,0.12);
+  --danger:        #F87171;
+  --danger-light:  rgba(248,113,113,0.12);
+
+  --shadow-card:   0 4px 24px rgba(0,0,0,0.40);
+  --shadow-hover:  0 8px 40px rgba(0,0,0,0.60);
+  --shadow-glass:  0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04);
+
+  --navbar-bg:     rgba(11,11,15,0.78);
+  --sidebar-bg:    rgba(21,21,27,0.45);
+  --sidebar-border: rgba(255,255,255,0.06);
+}

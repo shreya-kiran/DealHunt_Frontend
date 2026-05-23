@@ -1,0 +1,244 @@
+/* =============================================
+   DealHunt – Waitlist Page Stylesheet
+   ============================================= */
+
+/* ─────────────── NAVBAR ─────────────── */
+.waitlist-page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.waitlist-navbar {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 1.5rem; height: 60px;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.waitlist-logo {
+  font-size: 1.1rem; font-weight: 800; letter-spacing: -0.5px;
+  background: linear-gradient(135deg, var(--accent), var(--white-accent));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  text-decoration: none;
+}
+
+.waitlist-header-right {
+  display: flex; align-items: center; gap: 1rem;
+}
+
+.theme-toggle-header {
+  background: var(--bg-card); border: 1.5px solid var(--border);
+  border-radius: 50%; width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--text-secondary);
+  transition: all var(--t);
+}
+.theme-toggle-header:hover { border-color: var(--accent); color: var(--accent); }
+.theme-toggle-header svg { width: 16px; height: 16px; }
+
+.profile-button {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.5rem 1rem; border-radius: 999px;
+  background: var(--accent-light); border: 1.5px solid var(--border);
+  color: var(--text-secondary); text-decoration: none;
+  transition: all var(--t); cursor: pointer;
+  font-size: 0.88rem; font-weight: 600;
+}
+.profile-button:hover {
+  background: var(--accent); color: var(--accent-fg);
+  border-color: var(--accent);
+}
+
+.profile-avatar {
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+}
+
+.profile-label { display: none; }
+
+/* ─────────────── MAIN ─────────────── */
+.waitlist-main {
+  padding: 3rem 1.5rem;
+  max-width: 900px; margin: 0 auto;
+}
+
+.waitlist-container {
+  display: flex; flex-direction: column; gap: 3rem;
+}
+
+/* ─────────────── HERO ─────────────── */
+.waitlist-hero {
+  text-align: center; padding: 2rem 0;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 0.82rem; font-weight: 700;
+  padding: 0.4rem 1rem; border-radius: 999px;
+  background: var(--accent-light); color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.waitlist-title {
+  font-size: 2.5rem; font-weight: 800; line-height: 1.2;
+  color: var(--text-primary); margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.waitlist-subtitle {
+  font-size: 1.05rem; color: var(--text-secondary);
+  line-height: 1.6; max-width: 600px; margin: 0 auto;
+}
+
+/* ─────────────── FORM ─────────────── */
+.waitlist-form-section {
+  display: flex; justify-content: center;
+}
+
+.waitlist-form {
+  width: 100%; max-width: 500px;
+}
+
+.form-group {
+  display: flex; gap: 0.5rem;
+  background: var(--bg-card); border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm); padding: 0.4rem;
+}
+
+.form-input {
+  flex: 1; padding: 0.8rem 1rem;
+  background: transparent; border: none; outline: none;
+  font-family: var(--font); font-size: 1rem;
+  color: var(--text-primary);
+}
+.form-input::placeholder { color: var(--text-muted); }
+
+.form-submit {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, var(--accent), var(--white-accent));
+  color: var(--accent-fg); border: none; border-radius: var(--radius-sm);
+  font-family: var(--font); font-size: 1rem; font-weight: 700;
+  cursor: pointer; transition: all var(--t);
+  flex-shrink: 0;
+}
+.form-submit:hover { transform: translateY(-2px); }
+
+.form-success {
+  text-align: center; margin-top: 1rem;
+  color: var(--success); font-size: 0.95rem; font-weight: 600;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─────────────── BENEFITS ─────────────── */
+.waitlist-benefits {
+  padding: 2rem 0;
+}
+
+.benefits-title {
+  font-size: 1.5rem; font-weight: 800; text-align: center;
+  margin-bottom: 2rem; color: var(--text-primary);
+}
+
+.benefits-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.benefit-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.5rem;
+  text-align: center; transition: all var(--t);
+}
+.benefit-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent); box-shadow: var(--shadow-hover);
+}
+
+.benefit-icon {
+  font-size: 2.5rem; margin-bottom: 0.75rem;
+}
+
+.benefit-card-title {
+  font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.benefit-description {
+  font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;
+}
+
+/* ─────────────── STATS ─────────────── */
+.waitlist-stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem; padding: 2rem; background: var(--bg-card);
+  border-radius: var(--radius); border: 1px solid var(--border);
+}
+
+.stat-item { text-align: center; }
+
+.stat-number {
+  font-size: 2rem; font-weight: 800; color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.88rem; color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* ─────────────── CTA ─────────────── */
+.waitlist-cta {
+  display: flex; justify-content: center;
+}
+
+.cta-card {
+  width: 100%; max-width: 500px;
+  background: var(--bg-card); border: 1.5px solid transparent;
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)),
+                    linear-gradient(135deg, var(--accent), var(--white-accent), var(--success));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: var(--radius); padding: 2rem;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 1.4rem; font-weight: 800; margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.cta-text {
+  font-size: 1rem; color: var(--text-secondary); margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, var(--accent), var(--white-accent));
+  color: var(--accent-fg); border: none; border-radius: var(--radius-sm);
+  font-family: var(--font); font-size: 1rem; font-weight: 700;
+  text-decoration: none; cursor: pointer;
+  transition: all var(--t);
+}
+.cta-button:hover { transform: translateY(-2px); }
+
+/* ─────────────── RESPONSIVE ─────────────── */
+@media (max-width: 700px) {
+  .waitlist-title { font-size: 1.8rem; }
+  .waitlist-subtitle { font-size: 0.95rem; }
+  .form-group { flex-direction: column; }
+  .form-submit { width: 100%; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .waitlist-stats { grid-template-columns: 1fr; }
+  .profile-label { display: inline; }
+}

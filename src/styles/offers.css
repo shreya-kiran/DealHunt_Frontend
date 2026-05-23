@@ -1,0 +1,233 @@
+/* =============================================
+   DealHunt – Offers & Deals Page Stylesheet
+   ============================================= */
+
+/* ─────────────── WATERMARK ─────────────── */
+.offers-watermark {
+  position: fixed; bottom: 10%; right: -5%; z-index: 0;
+  opacity: 0.08; pointer-events: none;
+}
+
+.watermark-text {
+  display: block; font-size: 12rem; font-weight: 900;
+  color: var(--accent); letter-spacing: 20px;
+  transform: rotate(-45deg); white-space: nowrap;
+  text-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ─────────────── PAGE ─────────────── */
+.offers-deals-page {
+  min-height: 100vh;
+  background: var(--bg);
+  position: relative;
+}
+
+/* ─────────────── NAVBAR ─────────────── */
+.offers-navbar {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 1.5rem; height: 60px;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.offers-logo {
+  font-size: 1.1rem; font-weight: 800; letter-spacing: -0.5px;
+  background: linear-gradient(135deg, var(--accent), var(--white-accent));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  text-decoration: none;
+}
+
+.offers-header-right {
+  display: flex; align-items: center; gap: 1rem;
+}
+
+.theme-toggle-offers {
+  background: var(--bg-card); border: 1.5px solid var(--border);
+  border-radius: 50%; width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--text-secondary);
+  transition: all var(--t);
+}
+.theme-toggle-offers:hover { border-color: var(--accent); color: var(--accent); }
+.theme-toggle-offers svg { width: 16px; height: 16px; }
+
+.profile-button-offers {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.5rem 1rem; border-radius: 999px;
+  background: var(--accent-light); border: 1.5px solid var(--border);
+  color: var(--text-secondary); text-decoration: none;
+  transition: all var(--t); cursor: pointer;
+  font-size: 0.88rem; font-weight: 600;
+}
+.profile-button-offers:hover {
+  background: var(--accent); color: var(--accent-fg);
+  border-color: var(--accent);
+}
+
+.profile-avatar-offers {
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+}
+
+.profile-label-offers { display: none; }
+
+/* ─────────────── MAIN ─────────────── */
+.offers-main {
+  padding: 3rem 1.5rem;
+  max-width: 1000px; margin: 0 auto;
+  position: relative; z-index: 1;
+}
+
+.offers-container {
+  display: flex; flex-direction: column; gap: 2.5rem;
+}
+
+/* ─────────────── HEADER ─────────────── */
+.offers-header {
+  text-align: center; padding: 1rem 0;
+}
+
+.offers-title {
+  font-size: 2.2rem; font-weight: 800; line-height: 1.2;
+  color: var(--text-primary); margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+
+.offers-subtitle {
+  font-size: 1.05rem; color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ─────────────── FILTER ─────────────── */
+.offers-filter {
+  display: flex; justify-content: center;
+}
+
+.category-tabs {
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-tab {
+  padding: 0.6rem 1.2rem; border-radius: 999px;
+  background: var(--bg-card); border: 1.5px solid var(--border);
+  color: var(--text-secondary); font-family: var(--font);
+  font-size: 0.88rem; font-weight: 600; cursor: pointer;
+  transition: all var(--t);
+}
+.category-tab:hover {
+  border-color: var(--accent); color: var(--accent);
+}
+.category-tab.active {
+  background: linear-gradient(135deg, var(--accent), var(--white-accent));
+  color: var(--accent-fg); border-color: var(--accent);
+}
+
+/* ─────────────── OFFERS GRID ─────────────── */
+.offers-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.offer-card {
+  background: var(--bg-card); border: 1.5px solid var(--border);
+  border-radius: var(--radius); padding: 1.5rem;
+  display: flex; flex-direction: column; gap: 1rem;
+  transition: all var(--t)); cursor: pointer;
+}
+.offer-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent); box-shadow: var(--shadow-hover);
+}
+
+.offer-header-section {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.offer-badge {
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.6rem; border-radius: 999px;
+  background: var(--warning-light); color: var(--warning);
+}
+
+.offer-discount {
+  font-size: 0.95rem; font-weight: 800; color: var(--accent);
+  background: var(--accent-light); padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+}
+
+.offer-title {
+  font-size: 1.1rem; font-weight: 700; color: var(--text-primary);
+  margin: 0;
+}
+
+.offer-category {
+  font-size: 0.82rem; color: var(--text-muted);
+  margin: 0;
+}
+
+.offer-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; margin-top: auto;
+}
+
+.offer-date {
+  font-size: 0.85rem; color: var(--text-secondary);
+}
+
+.offer-cta {
+  padding: 0.5rem 1rem; border-radius: 6px;
+  background: var(--accent-light); color: var(--accent);
+  border: 1.5px solid var(--accent);
+  font-family: var(--font); font-weight: 600; cursor: pointer;
+  transition: all var(--t); flex-shrink: 0;
+}
+.offer-cta:hover {
+  background: var(--accent); color: var(--accent-fg);
+}
+
+/* ─────────────── INFO SECTION ─────────────── */
+.offers-info {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem; padding: 2rem 0;
+}
+
+.info-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.5rem;
+  transition: all var(--t);
+}
+.info-card:hover {
+  border-color: var(--accent); transform: translateY(-2px);
+}
+
+.info-title {
+  font-size: 1rem; font-weight: 700; color: var(--text-primary);
+  margin: 0 0 0.75rem 0;
+}
+
+.info-text {
+  font-size: 0.88rem; color: var(--text-secondary);
+  line-height: 1.6; margin: 0;
+}
+
+/* ─────────────── RESPONSIVE ─────────────── */
+@media (max-width: 700px) {
+  .offers-title { font-size: 1.8rem; }
+  .offers-subtitle { font-size: 0.95rem; }
+  .offers-grid { grid-template-columns: 1fr; }
+  .watermark-text { font-size: 8rem; letter-spacing: 10px; }
+  .profile-label-offers { display: inline; }
+  .category-tabs {
+    max-width: 100%;
+  }
+  .category-tab {
+    font-size: 0.78rem; padding: 0.5rem 0.9rem;
+  }
+}
